@@ -81,7 +81,7 @@ void serialISR();        //ISR that is called when serial data is received
 void setTime();          //Function to set the UNIX time
 void writeDataToFile(int data); //Function for writing to file
 void updateLCDTime();     //Function to update LCD Time
-trigerViewChange();       //Function used to trigger view change
+void trigerViewChange();       //Function used to trigger view change
 void plot();
 void standbyFunction();
 //------------------------------------------------------------------------------
@@ -326,8 +326,7 @@ void plot(){
      LCDStanbyFlag = 1;
    }
    else if (LCDStanbyFlag==1){
-         lcd.turnOn(); 
-           lcd.init();                             //Initialize LCD
+           lcd.init();                             //Initialize and Turn ON LCD
     if((setPlotFlag==0)){
     lcd.printString(" TEMP. LOGGER!",0,0);        //Print Welcome Message
     }else{
